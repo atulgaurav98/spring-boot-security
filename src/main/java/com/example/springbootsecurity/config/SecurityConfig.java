@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin").hasRole("ADMIN") //admin api accessile by ADMIN role only
                 //.antMatchers("/user").hasRole("USER")// to facilitate user api to be accessible by single role
                 .antMatchers("/user").hasAnyRole("USER","ADMIN") //user api can be accessed by both roles            .antMatchers("/").permitAll()
+                .antMatchers("/").permitAll()
                 .and().formLogin();
     }
 
